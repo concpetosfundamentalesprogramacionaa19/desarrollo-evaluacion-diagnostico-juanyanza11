@@ -1,0 +1,61 @@
+1. Proc: Autos
+2. 	numero, i[0-n]
+3	cImpuesto, d[0-n]
+4.	marca, x(50)[{A-Z},{a,z},{1-9},{á,é,í,ó,ú,ñ},{BS}]
+5.	origen, x(50)[{A-Z},{a,z},{1-9},{á,é,í,ó,ú,ñ},{BS}]
+6.	costo, d[0-n]
+7.	total, d[0-n]
+8.	c, i[1-n]
+9.	cImpuesto <-- 0
+10.	impgen <-- 0
+11.	totalv <-- 0
+12.	pA <-- 0
+13.	pCh <-- 0
+14.	pC <-- 0
+15.	pO <--0
+16.	Escribir "Ingrese el número de autos a importar"
+17.	Leer numero
+18.	Para (c<--1,+1,numero)
+19.		Escribir "Ingrese la marca del vehículo"
+20.		leer marca
+21.		Escribir "Ingrese el origen del vehículo"
+22.		leer origen
+23.		Escribir "Ingrese el costo del vehículo"
+24.			Si origen = Argentina Entonces
+25.				cImpuesto <-- costo*0.20 
+26.				precioventa<--costo*0.20 +costo
+27.				pA <-- pA+1
+28.			F.Si
+29.				Si origen = Colombia Entonces
+30.					cImpuesto <-- costo*0.25
+31.					precioventa<--costo*0.25 +costo
+32.					pC <-- pC + 1
+33.				F.Si
+34.					Si chile = origen Entonces
+35.						cImpuesto <-- costo*0.30
+36.						precioventa<--costo*0.30 +costo
+37.						pCh <-- pCh+1
+38.					F.Si
+39.						Si origen =! Argentina y origen =! Colombia Entonces
+40.							cImpuesto <-- costo * 0.40
+41.							precioventa<--costo*0.40 +costo
+42.							pO <-- pO+1
+43.						F.Si
+44.		impgen <-- impgen + cImpuestos
+45.		totalv <-- totalv + precioventa
+46.	Fin_para
+47.	Escribir "El número de autos importados son "+numero+ "vehículos"
+48.	Escribir "El total de impuestos generados es " +impgen " dólares"
+49.	Escribir "El total de los precios de venta de los autos es " +precioventa+ " dólares"
+50.	Escribir "El número de vehículos de origen Argentino es " +pA
+51.	Escribir "El número de vehículos de origen Colombiano es " +pC
+52.	Escribir "El número de vehículos de origen Chileno es " +pCh
+53.	Escribir "El número de vehículos de otro país de origen es " +pO
+54.Fin_proc
+
+	
+	
+
+	
+
+		 
